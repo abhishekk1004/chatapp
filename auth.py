@@ -2,7 +2,10 @@ from passlib.context import CryptContext
 from datetime import datetime, timedelta
 from jose import jwt, JWTError
 
-SECRET_KEY = "mysecret"  # Replace with strong secret in .env
+import os
+from dotenv import load_dotenv
+
+SECRET_KEY = "hh30RQudE341oPP9RImNJxS8auuXwCRyOd-k50A-D6k"  
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
@@ -25,3 +28,12 @@ def decode_token(token: str):
         return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
     except JWTError:
         return None
+
+
+
+
+load_dotenv()
+
+SECRET_KEY = os.getenv("SECRET_KEY")
+ALGORITHM = os.getenv("ALGORITHM")
+ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))
