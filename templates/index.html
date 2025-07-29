@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome | MyApp</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="landing">
-  <div class="container">
-    <h1>🚀 Welcome to <span>MyApp</span></h1>
-    <p>Your modern solution for data & control.</p>
-    <a href="/login" class="btn">Login</a>
-  </div>
+<body class="bg-blue-50 min-h-screen">
+  <header class="bg-blue-600 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">Welcome to Our App</h1>
+    <p class="text-lg mt-2">Your real-time web solution with FastAPI</p>
+  </header>
+
+  <main class="p-10 text-center">
+    <p class="text-xl text-gray-700 mb-6">Manage users, rooms, and analytics in one place.</p>
+    <a href="/login" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700">Login</a>
+    <a href="/signup" class="ml-4 bg-gray-200 text-blue-600 px-6 py-2 rounded shadow hover:bg-gray-300">Sign Up</a>
+  </main>
 </body>
 </html>
