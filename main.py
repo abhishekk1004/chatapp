@@ -77,6 +77,16 @@ def login_post(username: str = Form(...), password: str = Form(...)):
 def dashboard(request: Request):
     return templates.TemplateResponse("dashboard.html", {"request": request})
 
+
+@app.get("/signup", response_class=HTMLResponse)
+def signup_page(request: Request):
+    return templates.TemplateResponse("signup.html", {"request": request})
+
+@app.get("/forgot-password", response_class=HTMLResponse)
+def forgot_password(request: Request):
+    return templates.TemplateResponse("forgot_password.html", {"request": request})
+
+
 # Include WebSocket and analytics routers
 app.include_router(websocket_router)
 app.include_router(analytics_router)
